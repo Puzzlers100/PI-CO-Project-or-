@@ -522,9 +522,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="NAME" x="-1.27" y="43.815" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-1.27" y="17.78" size="1.778" layer="96"/>
 </instance>
-<instance part="JP2" gate="A" x="96.52" y="35.56" smashed="yes">
-<attribute name="NAME" x="90.17" y="46.355" size="1.778" layer="95"/>
-<attribute name="VALUE" x="90.17" y="20.32" size="1.778" layer="96"/>
+<instance part="JP2" gate="A" x="53.34" y="33.02" smashed="yes">
+<attribute name="NAME" x="46.99" y="43.815" size="1.778" layer="95"/>
+<attribute name="VALUE" x="46.99" y="17.78" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY1" gate="GND" x="5.08" y="-20.32" smashed="yes">
 <attribute name="VALUE" x="3.175" y="-23.495" size="1.778" layer="96"/>
