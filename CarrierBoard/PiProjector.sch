@@ -5484,11 +5484,98 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="transistor-npn" urn="urn:adsk.eagle:library:398">
-<description>&lt;b&gt;NPN Transistors&lt;/b&gt;&lt;p&gt;
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="SOT23" urn="urn:adsk.eagle:footprint:28669/1" library_version="6">
+<package name="POWERDI323" urn="urn:adsk.eagle:footprint:43246/1" library_version="8">
+<description>1.0A SURFACE MOUNT SCHOTTKY BARRIER RECTIFIER POWERDI ® 323 &lt;p&gt;
+Source: http://www.diodes.com/datasheets/ds30899.pdf</description>
+<smd name="C" x="-0.75" y="0" dx="2" dy="1.1" layer="1"/>
+<smd name="A" x="1.15" y="0" dx="0.8" dy="0.8" layer="1"/>
+<wire x1="-0.875" y1="-0.55" x2="-0.875" y2="0.55" width="0.2032" layer="51"/>
+<wire x1="-0.875" y1="0.55" x2="0.8625" y2="0.55" width="0.2032" layer="51"/>
+<wire x1="0.8625" y1="0.55" x2="0.8625" y2="-0.55" width="0.2032" layer="51"/>
+<wire x1="0.8625" y1="-0.55" x2="-0.875" y2="-0.55" width="0.2032" layer="51"/>
+<wire x1="0" y1="0.35" x2="-0.425" y2="0" width="0.2" layer="51"/>
+<wire x1="-0.425" y1="0" x2="0" y2="-0.35" width="0.2" layer="51"/>
+<rectangle x1="-1.3" y1="-0.5375" x2="-0.525" y2="0.5375" layer="51"/>
+<rectangle x1="0.8375" y1="-0.4" x2="1.3" y2="0.4" layer="51"/>
+<text x="-1.8516" y="0.7786" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.8516" y="-2.5566" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="POWERDI323" urn="urn:adsk.eagle:package:43459/1" type="box" library_version="8">
+<description>1.0A SURFACE MOUNT SCHOTTKY BARRIER RECTIFIER POWERDI ® 323 
+Source: http://www.diodes.com/datasheets/ds30899.pdf</description>
+<packageinstances>
+<packageinstance name="POWERDI323"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="SCHOTTKY" urn="urn:adsk.eagle:symbol:43101/2" library_version="8">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.905" y2="1.016" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0.635" y1="-1.016" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<text x="-2.286" y="1.905" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.286" y="-3.429" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="point" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PD3S160" urn="urn:adsk.eagle:component:43660/3" prefix="D" library_version="8">
+<description>1.0A SURFACE MOUNT SCHOTTKY BARRIER RECTIFIER POWERDI ® 323 &lt;p&gt;
+Source: http://www.diodes.com/datasheets/ds30899.pdf</description>
+<gates>
+<gate name="G$1" symbol="SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="POWERDI323">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:43459/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="0" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="transistor-small-signal" urn="urn:adsk.eagle:library:401">
+<description>&lt;b&gt;Small Signal Transistors&lt;/b&gt;&lt;p&gt;
+Packages from :&lt;br&gt;
+www.infineon.com; &lt;br&gt;
+www.semiconductors.com;&lt;br&gt;
+www.irf.com&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT23" urn="urn:adsk.eagle:footprint:28669/1" library_version="5">
 <description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
 <wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
 <wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
@@ -5505,7 +5592,7 @@ Source: www.kingbright.com</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="SOT23" urn="urn:adsk.eagle:package:28738/2" type="model" library_version="6">
+<package3d name="SOT23" urn="urn:adsk.eagle:package:28738/2" type="model" library_version="5">
 <description>SOT-23</description>
 <packageinstances>
 <packageinstance name="SOT23"/>
@@ -5513,77 +5600,67 @@ Source: www.kingbright.com</description>
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="NPN" urn="urn:adsk.eagle:symbol:26256/2" library_version="6">
-<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
-<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
-<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
-<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
-<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
-<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
-<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+<symbol name="P-MOS" urn="urn:adsk.eagle:symbol:29640/1" library_version="5">
+<wire x1="0" y1="0" x2="-1.016" y2="0.381" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="0.381" x2="-1.016" y2="-0.381" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="-0.381" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="2.032" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.032" x2="0" y2="2.794" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="0" x2="-0.508" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.508" y1="0" x2="-0.381" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-3.048" x2="1.27" y2="-3.048" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-3.048" x2="1.27" y2="-0.254" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-0.254" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="2.794" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="2.794" x2="0" y2="2.794" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-0.762" x2="1.778" y2="-0.762" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-0.762" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="0.762" y2="-0.762" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="0" x2="1.778" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-2.032" x2="0" y2="-2.032" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.032" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="2.032" x2="0" y2="2.032" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="0" x2="-0.889" y2="-0.127" width="0.254" layer="94"/>
+<wire x1="-0.889" y1="-0.127" x2="-0.889" y2="0.127" width="0.254" layer="94"/>
+<wire x1="-0.889" y1="0.127" x2="-0.508" y2="0" width="0.254" layer="94"/>
+<wire x1="1.016" y1="-0.635" x2="1.524" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-0.635" x2="1.27" y2="-0.254" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-0.254" x2="1.016" y2="-0.635" width="0.254" layer="94"/>
+<circle x="0" y="2.794" radius="0.3592" width="0" layer="94"/>
+<circle x="0" y="2.032" radius="0.3592" width="0" layer="94"/>
+<circle x="0" y="-3.048" radius="0.3592" width="0" layer="94"/>
+<text x="2.54" y="0" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.032" y1="-2.54" x2="-1.524" y2="-1.27" layer="94"/>
+<rectangle x1="-2.032" y1="1.27" x2="-1.524" y2="2.54" layer="94"/>
+<rectangle x1="-2.032" y1="-0.762" x2="-1.524" y2="0.762" layer="94"/>
+<pin name="G" x="-5.08" y="2.54" visible="off" length="short" direction="pas"/>
+<pin name="D" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="BCX70*" urn="urn:adsk.eagle:component:29101/5" prefix="Q" library_version="6">
-<description>&lt;b&gt;NPN Transistor&lt;/b&gt;</description>
+<deviceset name="BSS84" urn="urn:adsk.eagle:component:29809/4" prefix="Q" library_version="5">
+<description>&lt;b&gt;P-CHANNEL MOS FET&lt;/b&gt;</description>
 <gates>
-<gate name="G$1" symbol="NPN" x="0" y="0"/>
+<gate name="G$1" symbol="P-MOS" x="0" y="0"/>
 </gates>
 <devices>
-<device name="SMD" package="SOT23">
+<device name="" package="SOT23">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="2"/>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:28738/2"/>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="POPULARITY" value="0" constant="no"/>
+<attribute name="POPULARITY" value="8" constant="no"/>
 </technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="docu-dummy" urn="urn:adsk.eagle:library:215">
-<description>Dummy symbols</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="DIODE" urn="urn:adsk.eagle:symbol:13159/2" library_version="3">
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="DIODE" urn="urn:adsk.eagle:component:13169/2" prefix="D" library_version="3">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;</description>
-<gates>
-<gate name="G$1" symbol="DIODE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -5774,11 +5851,11 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY28" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY29" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY30" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="Q1" library="transistor-npn" library_urn="urn:adsk.eagle:library:398" deviceset="BCX70*" device="SMD" package3d_urn="urn:adsk.eagle:package:28738/2"/>
 <part name="R17" library="pm-labs" deviceset="R" device="0603R" value="1u"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="D3" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="DIODE" device=""/>
+<part name="D4" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="PD3S160" device="" package3d_urn="urn:adsk.eagle:package:43459/1"/>
+<part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS84" device="" package3d_urn="urn:adsk.eagle:package:28738/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -6127,12 +6204,9 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY30" gate="GND" x="-43.18" y="213.36" smashed="yes">
 <attribute name="VALUE" x="-45.085" y="210.185" size="1.778" layer="96"/>
 </instance>
-<instance part="Q1" gate="G$1" x="147.32" y="195.58" smashed="yes">
-<attribute name="NAME" x="144.78" y="193.04" size="1.778" layer="95" rot="R180"/>
-</instance>
-<instance part="R17" gate="R" x="142.24" y="203.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="144.78" y="208.28" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="144.78" y="203.2" size="1.778" layer="96" rot="R270"/>
+<instance part="R17" gate="R" x="142.24" y="205.74" smashed="yes" rot="R270">
+<attribute name="NAME" x="144.78" y="210.82" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="144.78" y="205.74" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="SUPPLY5" gate="GND" x="162.56" y="157.48" smashed="yes">
 <attribute name="VALUE" x="160.655" y="154.305" size="1.778" layer="96"/>
@@ -6140,7 +6214,14 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY22" gate="GND" x="139.7" y="157.48" smashed="yes">
 <attribute name="VALUE" x="137.795" y="154.305" size="1.778" layer="96"/>
 </instance>
-<instance part="D3" gate="G$1" x="139.7" y="200.66" smashed="yes" rot="R270"/>
+<instance part="D4" gate="G$1" x="139.7" y="203.2" smashed="yes" rot="R270">
+<attribute name="NAME" x="141.605" y="205.486" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="136.271" y="205.486" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="Q2" gate="G$1" x="149.86" y="195.58" smashed="yes">
+<attribute name="NAME" x="152.4" y="195.58" size="1.778" layer="95"/>
+<attribute name="VALUE" x="152.4" y="193.04" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 <bus name="GPIO[1..29],ID_SC,ID_SD">
@@ -7198,13 +7279,13 @@ Source: www.kingbright.com</description>
 <label x="-25.4" y="27.94" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="Q1" gate="G$1" pin="C"/>
-<wire x1="149.86" y1="208.28" x2="149.86" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="210.82" x2="149.86" y2="200.66" width="0.1524" layer="91"/>
 <pinref part="R17" gate="R" pin="1"/>
-<wire x1="149.86" y1="208.28" x2="142.24" y2="208.28" width="0.1524" layer="91"/>
-<junction x="149.86" y="208.28"/>
-<wire x1="149.86" y1="213.36" x2="149.86" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="210.82" x2="142.24" y2="210.82" width="0.1524" layer="91"/>
+<junction x="149.86" y="210.82"/>
 <label x="149.86" y="210.82" size="1.778" layer="95" rot="R90"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
+<wire x1="149.86" y1="210.82" x2="149.86" y2="218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="3">
@@ -8152,8 +8233,9 @@ Source: www.kingbright.com</description>
 <label x="-27.94" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="139.7" y1="203.2" x2="139.7" y2="213.36" width="0.1524" layer="91"/>
-<label x="139.7" y="203.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="139.7" y1="205.74" x2="139.7" y2="213.36" width="0.1524" layer="91"/>
+<label x="139.7" y="205.74" size="1.778" layer="95" rot="R90"/>
+<pinref part="D4" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$38" class="0">
@@ -8244,25 +8326,26 @@ Source: www.kingbright.com</description>
 <wire x1="157.48" y1="195.58" x2="162.56" y2="195.58" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="195.58" x2="157.48" y2="187.96" width="0.1524" layer="91"/>
 <label x="157.48" y="190.5" size="1.778" layer="95" rot="R90"/>
-<pinref part="Q1" gate="G$1" pin="E"/>
 <wire x1="157.48" y1="187.96" x2="157.48" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="190.5" x2="149.86" y2="187.96" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="187.96" x2="157.48" y2="187.96" width="0.1524" layer="91"/>
 <junction x="157.48" y="187.96"/>
+<pinref part="Q2" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="R17" gate="R" pin="2"/>
-<wire x1="142.24" y1="198.12" x2="142.24" y2="195.58" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="B"/>
-<wire x1="142.24" y1="195.58" x2="144.78" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="195.58" x2="139.7" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="195.58" x2="139.7" y2="185.42" width="0.1524" layer="91"/>
-<junction x="142.24" y="195.58"/>
+<wire x1="142.24" y1="200.66" x2="142.24" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="198.12" x2="144.78" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="198.12" x2="139.7" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="198.12" x2="139.7" y2="185.42" width="0.1524" layer="91"/>
+<junction x="142.24" y="198.12"/>
 <pinref part="SLAVE_SWITCH" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="195.58" x2="139.7" y2="198.12" width="0.1524" layer="91"/>
-<junction x="139.7" y="195.58"/>
+<wire x1="139.7" y1="198.12" x2="139.7" y2="200.66" width="0.1524" layer="91"/>
+<junction x="139.7" y="198.12"/>
+<pinref part="D4" gate="G$1" pin="C"/>
+<pinref part="Q2" gate="G$1" pin="G"/>
 </segment>
 </net>
 </nets>
