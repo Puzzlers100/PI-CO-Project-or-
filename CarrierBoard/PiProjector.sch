@@ -6605,7 +6605,7 @@ www.irf.com&lt;p&gt;
 <label x="58.42" y="71.12" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GPIO23" class="0">
+<net name="SDA" class="0">
 <segment>
 <pinref part="P9" gate="G$1" pin="20"/>
 <wire x1="76.2" y1="193.04" x2="91.44" y2="193.04" width="0.1524" layer="91"/>
@@ -6619,7 +6619,7 @@ www.irf.com&lt;p&gt;
 <label x="-15.24" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="GPIO24" class="0">
+<net name="SCL" class="0">
 <segment>
 <pinref part="P9" gate="G$1" pin="19"/>
 <wire x1="68.58" y1="193.04" x2="53.34" y2="193.04" width="0.1524" layer="91"/>

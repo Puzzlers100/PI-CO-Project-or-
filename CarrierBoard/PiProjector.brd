@@ -3291,7 +3291,7 @@ design rules under a new name.</description>
 <wire x1="2.8" y1="-1.5588" x2="2.8" y2="-14.2" width="0.2" layer="1"/>
 <wire x1="2.8" y1="-14.2" x2="2.4" y2="-14.6" width="0.2" layer="1"/>
 </signal>
-<signal name="GPIO23">
+<signal name="SDA">
 <contactref element="P9" pad="20"/>
 <contactref element="RPI-CM1" pad="47"/>
 <wire x1="1.6" y1="18.54" x2="1.6" y2="16.5" width="0.2" layer="1"/>
@@ -3315,7 +3315,7 @@ design rules under a new name.</description>
 <wire x1="-0.635" y1="-21.935" x2="1.7" y2="-19.6" width="0.2" layer="16"/>
 <wire x1="1.5" y1="-15.7" x2="1.7" y2="-15.9" width="0.2" layer="16"/>
 </signal>
-<signal name="GPIO24">
+<signal name="SCL">
 <contactref element="P9" pad="19"/>
 <contactref element="RPI-CM1" pad="45"/>
 <via x="2.3588" y="16.4" extent="1-16" drill="0.3"/>
