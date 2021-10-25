@@ -12,7 +12,7 @@
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
-<layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
 <layer number="6" name="Route6" color="25" fill="1" visible="no" active="no"/>
 <layer number="7" name="Route7" color="26" fill="1" visible="no" active="no"/>
 <layer number="8" name="Route8" color="27" fill="1" visible="no" active="no"/>
@@ -5851,11 +5851,16 @@ www.irf.com&lt;p&gt;
 <part name="SUPPLY28" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY29" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY30" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R17" library="pm-labs" deviceset="R" device="0603R" value="1u"/>
+<part name="R17" library="pm-labs" deviceset="R" device="0603R" value="10K"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="D4" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="PD3S160" device="" package3d_urn="urn:adsk.eagle:package:43459/1"/>
 <part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS84" device="" package3d_urn="urn:adsk.eagle:package:28738/2"/>
+<part name="PWR_LED" library="pm-labs" deviceset="TP" device="1R"/>
+<part name="+5V" library="pm-labs" deviceset="TP" device="1R"/>
+<part name="+3.3V" library="pm-labs" deviceset="TP" device="1R"/>
+<part name="GND" library="pm-labs" deviceset="TP" device="1R"/>
+<part name="ACT_LED" library="pm-labs" deviceset="TP" device="1R"/>
 </parts>
 <sheets>
 <sheet>
@@ -6180,8 +6185,8 @@ www.irf.com&lt;p&gt;
 <attribute name="NAME" x="174.879" y="197.104" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="175.641" y="201.676" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="GLOBAL_EN" gate="G" x="-15.24" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="-19.05" y="2.54" size="1.27" layer="95" rot="R180" align="center-left"/>
+<instance part="GLOBAL_EN" gate="G" x="-17.78" y="2.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="-21.59" y="2.54" size="1.27" layer="95" rot="R180" align="center-left"/>
 </instance>
 <instance part="U$15" gate="G$1" x="279.4" y="78.74" smashed="yes" rot="R180"/>
 <instance part="SUPPLY27" gate="GND" x="312.42" y="68.58" smashed="yes">
@@ -6221,6 +6226,21 @@ www.irf.com&lt;p&gt;
 <instance part="Q2" gate="G$1" x="149.86" y="195.58" smashed="yes">
 <attribute name="NAME" x="152.4" y="195.58" size="1.778" layer="95"/>
 <attribute name="VALUE" x="152.4" y="193.04" size="1.778" layer="96"/>
+</instance>
+<instance part="PWR_LED" gate="G" x="-17.78" y="7.62" smashed="yes" rot="R90">
+<attribute name="NAME" x="-21.59" y="7.62" size="1.27" layer="95" rot="R180" align="center-left"/>
+</instance>
+<instance part="+5V" gate="G" x="-17.78" y="15.24" smashed="yes" rot="R90">
+<attribute name="NAME" x="-21.59" y="15.24" size="1.27" layer="95" rot="R180" align="center-left"/>
+</instance>
+<instance part="+3.3V" gate="G" x="-17.78" y="30.48" smashed="yes">
+<attribute name="NAME" x="-17.78" y="34.29" size="1.27" layer="95" rot="R90" align="center-left"/>
+</instance>
+<instance part="GND" gate="G" x="-10.16" y="-2.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="-13.97" y="-2.54" size="1.27" layer="95" rot="R180" align="center-left"/>
+</instance>
+<instance part="ACT_LED" gate="G" x="-12.7" y="101.6" smashed="yes" rot="R90">
+<attribute name="NAME" x="-8.89" y="104.14" size="1.27" layer="95" rot="R180" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -6739,6 +6759,8 @@ www.irf.com&lt;p&gt;
 <pinref part="RPI-CM1" gate="G$1" pin="GND@53"/>
 <wire x1="-5.08" y1="60.96" x2="-7.62" y2="60.96" width="0.1524" layer="91"/>
 <junction x="-7.62" y="60.96"/>
+<pinref part="GND" gate="G" pin="1"/>
+<junction x="-7.62" y="-2.54"/>
 </segment>
 <segment>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
@@ -7277,6 +7299,7 @@ www.irf.com&lt;p&gt;
 <wire x1="-33.02" y1="27.94" x2="-17.78" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-33.02" y="27.94"/>
 <label x="-25.4" y="27.94" size="1.778" layer="95"/>
+<pinref part="+3.3V" gate="G" pin="1"/>
 </segment>
 <segment>
 <wire x1="149.86" y1="210.82" x2="149.86" y2="200.66" width="0.1524" layer="91"/>
@@ -7319,9 +7342,11 @@ www.irf.com&lt;p&gt;
 <pinref part="RPI-CM1" gate="G$1" pin="+5V(INPUT)@79"/>
 <wire x1="-5.08" y1="27.94" x2="-10.16" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-10.16" y="27.94"/>
-<wire x1="-10.16" y1="17.78" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="17.78" x2="-10.16" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-10.16" y="17.78"/>
-<label x="-10.16" y="7.62" size="1.778" layer="95" rot="R90"/>
+<label x="-15.24" y="15.24" size="1.778" layer="95"/>
+<wire x1="-10.16" y1="15.24" x2="-15.24" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="+5V" gate="G" pin="1"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="IN"/>
@@ -8242,7 +8267,7 @@ www.irf.com&lt;p&gt;
 <segment>
 <pinref part="GLOBAL_EN" gate="G" pin="1"/>
 <pinref part="RPI-CM1" gate="G$1" pin="GLOBAL_EN"/>
-<wire x1="-12.7" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$39" class="0">
@@ -8345,6 +8370,20 @@ www.irf.com&lt;p&gt;
 <junction x="139.7" y="198.12"/>
 <pinref part="D4" gate="G$1" pin="C"/>
 <pinref part="Q2" gate="G$1" pin="G"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="PWR_LED" gate="G" pin="1"/>
+<pinref part="RPI-CM1" gate="G$1" pin="PI_LED_!PWR"/>
+<wire x1="-15.24" y1="7.62" x2="-5.08" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="RPI-CM1" gate="G$1" pin="PI_!LED_ACTIVITY"/>
+<pinref part="ACT_LED" gate="G" pin="1"/>
+<wire x1="-10.16" y1="101.6" x2="-5.08" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
