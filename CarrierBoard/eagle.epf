@@ -1,6 +1,6 @@
 [Eagle]
 Version="09 06 02"
-Platform="Linux"
+Platform="Windows"
 Globals="Globals"
 Desktop="Desktop"
 
@@ -265,15 +265,11 @@ UsedLibraryUrn="urn:adsk.eagle:library:196"
 UsedLibraryUrn="urn:adsk.eagle:library:197"
 UsedLibraryUrn="urn:adsk.eagle:library:198"
 UsedLibraryUrn="urn:adsk.eagle:library:199"
-UsedLibrary="/home/kuba/EAGLE/libraries/Eagle_WR-USB (rev20d).lbr"
-UsedLibrary="/home/kuba/EAGLE/libraries/PiProject.lbr"
-UsedLibrary="/home/kuba/EAGLE/libraries/RPI-CM4.lbr"
-UsedLibrary="/home/kuba/EAGLE/libraries/pm-labs.lbr"
 
 [Win_1]
 Type="Control Panel"
 Number=0
 
 [Desktop]
-Screen="5440 1080"
+Screen="3842 1880"
 Window="Win_1"
